@@ -41,11 +41,13 @@ def visc(feed, name1, name2, liga = 1):
     for element in data_list1:
         if "TR" in list(element.keys())[0] and bet(feed):
 
-            if int(element["~TR"]) < 3 and element["TN"] == name1 and int(element["TM"]) * 2 <= int(element["TG"][:element["TG"].index(":")]):
+            if int(element["~TR"]) < 3 and element["TN"] == name1 and\
+                    int(element["TM"]) * 2 <= int(element["TG"][:element["TG"].index(":")]):
                 if name1 not in result:
                     result.append({name1: liga})
 
-            elif int(element["~TR"]) < 3 and element["TN"] == name2 and int(element["TM"]) * 2 <= int(element["TG"][:element["TG"].index(":")]):
+            elif int(element["~TR"]) < 3 and element["TN"] == name2 and\
+                    int(element["TM"]) * 2 <= int(element["TG"][:element["TG"].index(":")]):
                 if name2 not in result:
                     result.append({name2: liga})
 
